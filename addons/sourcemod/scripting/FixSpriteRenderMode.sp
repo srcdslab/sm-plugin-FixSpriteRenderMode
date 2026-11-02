@@ -5,6 +5,9 @@
 	
 	Idea by Darnias.
 */
+#pragma semicolon 1
+#pragma newdecls required
+
 public Plugin myinfo = 
 {
 	name = "Weapon Sprite Temp-Fix",
@@ -14,12 +17,12 @@ public Plugin myinfo =
 	url = ""
 };
 
-public OnEntityCreated(int entity, char[] classname)
+public void OnEntityCreated(int entity, const char[] classname)
 {
 	if (IsValidEntity(entity) && strcmp(classname, "env_sprite", false) == 0) RequestFrame(CheckSprite, entity);
 }
 
-public CheckSprite(int entity)
+void CheckSprite(int entity)
 {
 	if (IsValidEntity(entity)){
 		int ParentEntity = GetEntPropEnt(entity, Prop_Data, "m_pParent");
@@ -42,7 +45,7 @@ public CheckSprite(int entity)
 	}
 }
 
-int GetRootMoveParent(iEntity) {
+int GetRootMoveParent(int iEntity) {
     int iCurrentEntity = iEntity;
 	
     while (IsValidEntity(iCurrentEntity)) {
