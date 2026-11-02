@@ -13,7 +13,7 @@ public Plugin myinfo =
 	name = "Weapon Sprite Temp-Fix",
 	author = "Mapeadores",
 	description = "Changes render mode for parented sprites post-DZ Sirocco.",
-	version = "0.2",
+	version = "0.2.1",
 	url = ""
 };
 
